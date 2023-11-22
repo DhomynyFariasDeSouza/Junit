@@ -23,10 +23,24 @@ public class GerenciadoraClientes {
 	 * @param idCliente id do cliente a ser pesquisado
 	 * @return o cliente pesquisado ou null, caso não seja encontrado
 	 */
-	public Cliente pesquisaCliente (int idCliente) {
+	public Cliente pesquisaClientePorId (int idCliente) {
 
 		for (Cliente cliente : clientesDoBanco) {
 			if(cliente.getId() == idCliente)
+				return cliente;
+		}
+		return null;
+	}
+	
+	/**
+	 * Pesquisa por um cliente a partir do seu Cpf.
+	 * @param Cpf cpf do cliente a ser pesquisado
+	 * @return o cliente pesquisado ou null, caso não seja encontrado
+	 */
+	public Cliente pesquisaClientePorCPF (String Cpf) {
+
+		for (Cliente cliente : clientesDoBanco) {
+			if(Cpf.equalsIgnoreCase(cliente.getCpf()));
 				return cliente;
 		}
 		return null;
