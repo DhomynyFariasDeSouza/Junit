@@ -27,7 +27,7 @@ public class Main {
 			case 1:
 				System.out.print("Digite o ID do cliente: ");
 				int idCliente = sc.nextInt();
-				Cliente cliente = gerClientes.pesquisaCliente(idCliente);
+				Cliente cliente = gerClientes.pesquisaClientePorId(idCliente);
 				
 				if(cliente != null)
 					System.out.println(cliente.toString());
@@ -56,7 +56,7 @@ public class Main {
 				
 				System.out.print("Digite o ID do cliente: ");
 				int idCliente2 = sc.nextInt();
-				Cliente cliente2 = gerClientes.pesquisaCliente(idCliente2);
+				Cliente cliente2 = gerClientes.pesquisaClientePorId(idCliente2);
 				
 				if(cliente2 != null){
 					cliente2.setAtivo(true);
@@ -73,7 +73,7 @@ public class Main {
 				
 				System.out.print("Digite o ID do cliente: ");
 				int idCliente3 = sc.nextInt();
-				Cliente cliente3 = gerClientes.pesquisaCliente(idCliente3);
+				Cliente cliente3 = gerClientes.pesquisaClientePorId(idCliente3);
 				
 				if(cliente3 != null){
 					cliente3.setAtivo(false);
