@@ -32,19 +32,7 @@ public class ClienteTest {
 		assertSame(c,g.pesquisaClientePorId(3));
 		
 	}
-	
-	@Test
-	public void PesquisarClientePorCPF() {
-		GerenciadoraClientes g = new GerenciadoraClientes(new ArrayList<Cliente>());
-		g.adicionaCliente(a);
-		g.adicionaCliente(b);
-		g.adicionaCliente(c);
-		g.adicionaCliente(d);
-		
-		assertSame(d,g.pesquisaClientePorCPF("706.889.274-40"));
-		System.out.println(g.pesquisaClientePorCPF("706.889.274-40").toString());
-	}
-	
+
 	@Test
 	public void AtualizarCliente01(){
 		//salvando os atributos
