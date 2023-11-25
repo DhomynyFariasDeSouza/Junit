@@ -66,7 +66,7 @@ public class ContaCorrente {
 	@Override
 	public String toString() {
 		
-		String str = "========================="
+		String str = "========================="+"\n"
 					+ "Id: " + this.id + "\n"
 					+ "Saldo: " + this.saldo + "\n"
 					+ "Status: " + (ativa?"Ativa":"Inativa") + "\n"
