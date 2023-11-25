@@ -23,7 +23,7 @@ public class GerenciadoraClientes {
 	 * @param idCliente id do cliente a ser pesquisado
 	 * @return o cliente pesquisado ou null, caso não seja encontrado
 	 */
-	public Cliente pesquisaClientePorId (int idCliente) {
+	public Cliente pesquisaCliente (int idCliente) {
 
 		for (Cliente cliente : clientesDoBanco) {
 			if(cliente.getId() == idCliente)
@@ -31,7 +31,6 @@ public class GerenciadoraClientes {
 		}
 		return null;
 	}
-
 	
 	/**
 	 * Adiciona um novo cliente à lista de clientes do banco.
