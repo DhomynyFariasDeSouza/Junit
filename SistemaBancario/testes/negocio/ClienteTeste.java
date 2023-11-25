@@ -9,7 +9,7 @@ import negocio.GerenciadoraClientes;
 
 
 
-public class ClienteTest {
+public class ClienteTeste {
 	Cliente a = new Cliente(1, "José Osvaldo Iago Souza", "321.391.875-04", 16, "iago548@outlook.com", 754, true);
 	Cliente b = new Cliente(2, "Lais Emily Novaes", "130.412.929-20", 50, "lais759@yahoo.com.br", 753, false);
 	Cliente c = new Cliente(3, "Arthur Anthony da Conceição", "356.047.585-66", 18, "athur548@gmail.com", 758, false);
@@ -28,8 +28,8 @@ public class ClienteTest {
 		g.adicionaCliente(c);
 		g.adicionaCliente(d);
 		
-		assertSame(b, g.pesquisaClientePorId(2));
-		assertSame(c,g.pesquisaClientePorId(3));
+		assertSame(b, g.pesquisaCliente(2));
+		assertSame(c,g.pesquisaCliente(3));
 		
 	}
 
