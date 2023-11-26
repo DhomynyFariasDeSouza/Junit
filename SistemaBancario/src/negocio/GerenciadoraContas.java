@@ -97,13 +97,40 @@ public class GerenciadoraContas {
 		ContaCorrente contaOrigem = pesquisaConta(idContaOrigem);
 		ContaCorrente contaDestino = pesquisaConta(idContaDestino);
 		
-//		if(contaOrigem.getSaldo() >= valor){
+		if(contaOrigem.getSaldo() >= valor){
 			contaDestino.setSaldo(contaDestino.getSaldo() + valor);
 			contaOrigem.setSaldo(contaOrigem.getSaldo() - valor);
 			sucesso = true;
-//		}
+	}
 	
 		return sucesso;
 	}
+	/// adicionando o método sacar valor 
+	public boolean sacaValor(int idConta, double valor) {
+		ContaCorrente conta = pesquisaConta(idConta);
+	
+		if (conta != null && conta.getSaldo() >= valor) {
+			conta.setSaldo(conta.getSaldo() - valor);
+			return true;
+		}
+	
+		return false;
+
+		
+	}
+
+	// Adicione este método à classe GerenciadoraContas
+	public boolean depositaValor(int idConta, double valor) {
+		ContaCorrente conta = pesquisaConta(idConta);
+
+		if (conta != null) {
+			conta.setSaldo(conta.getSaldo() + valor);
+			return true;
+		}
+
+		return false;
+}
+
+	
 	
 }

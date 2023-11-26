@@ -7,7 +7,6 @@ import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;
 
-import org.junit.Before;
 import org.junit.Test;
 
 public class ContasTeste {
