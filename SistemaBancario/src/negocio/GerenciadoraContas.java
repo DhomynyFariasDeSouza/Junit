@@ -101,21 +101,19 @@ public class GerenciadoraContas {
 			contaDestino.setSaldo(contaDestino.getSaldo() + valor);
 			contaOrigem.setSaldo(contaOrigem.getSaldo() - valor);
 			sucesso = true;
-	}
+			} else {throw new SaldoInsuficienteException();}
 	
 		return sucesso;
 	}
 	/// adicionando o método sacar valor 
-	public boolean sacaValor(int idConta, double valor) {
+	public boolean sacaValor(int idConta, double valor) throws SaldoInsuficienteException {
 		ContaCorrente conta = pesquisaConta(idConta);
 	
 		if (conta != null && conta.getSaldo() >= valor) {
 			conta.setSaldo(conta.getSaldo() - valor);
-			return true;
-		}
-	
-		return false;
-
+			return true;} 
+		else {throw  new SaldoInsuficienteException();}
+			
 		
 	}
 

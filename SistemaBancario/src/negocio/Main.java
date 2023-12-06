@@ -9,7 +9,7 @@ public class Main {
 	static GerenciadoraClientes gerClientes;
 	static GerenciadoraContas gerContas;
 	
-	public static void main(String[] args) {
+	public static void main (String[] args) {
 		
 		inicializaSistemaBancario(); // criando algumas contas e clientes fictícios
 		

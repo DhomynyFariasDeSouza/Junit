@@ -1,5 +1,6 @@
 package negocio;
 import static org.junit.Assert.*;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -50,7 +51,7 @@ public class testeOperacoesFinanceiras {
     
         assertTrue(resultado);
     
-        assertEquals(saldoAntesDeposito + valorDeposito, saldoDepoisDeposito, 0.001);
+        assertEquals(saldoDepoisDeposito,250,0.001);
     }
 
     @Test
@@ -128,5 +129,17 @@ public class testeOperacoesFinanceiras {
         // Executa o método que deveria lançar a exceção
         gerContas.sacaValor(gerClientes.pesquisaCliente(idCliente).getIdContaCorrente(), valorSaque);
 }
+    
+    @Test
+    public void TesteDeTranferenciaComSaldoinsuficiente() {
+    	int contaOrigem = 1;
+    	int contaDestino = 2;
+    	double valor = 300.00;
+    	
+    	exceptionRule.expect(SaldoInsuficienteException.class);
+    	exceptionRule.expectMessage("Saldo insuficiente na conta.");
+    	
+    	gerContas.transfereValor(contaOrigem, valor, contaDestino);
+    }
 
 }
